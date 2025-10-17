@@ -1,0 +1,323 @@
+{
+  "model": "infolab-llm-3.1",
+  "type": "CHAT",
+  "auto_mode": true,
+  "variables": [
+    {
+      "name": "{{input}}",
+      "description": "Biến để nhận dữ liệu người dùng như mã hồ sơ, số tiền vay, thời hạn vay."
+    }
+  ],
+  "context": {
+    "system_prompt": "Bạn là chatbot tư vấn tài chính của Shinhan Bank. Chỉ trả lời dựa trên nội dung tài liệu ShinhanBank_VayVon_KienThuc_Chatbot_ZaloOA.md. Không trả lời các câu hỏi ngoài phạm vi tài liệu. Luôn ngắn gọn, chính xác, thân thiện. Tích hợp cảnh báo lừa đảo khi cần. KHÔNG yêu cầu chuyển khoản phí trước.",
+    "content": [
+      {
+        "section": "Lời chào và Menu chính",
+        "content": "Kính chào Quý khách! Bộ phận tư vấn tài chính và kiểm toán Shinhanbank, sẵn sàng hỗ trợ Quý khách về các dịch vụ tài chính của Shinhan Bank. Vui lòng chọn mục cần hỗ trợ bên dưới để bắt đầu:\n1️⃣ GIẢI NGÂN KHOẢN VAY\n2️⃣ ĐĂNG KÝ VAY MỚI\n3️⃣ TÍNH THỬ KHOẢN VAY\n4️⃣ TRA CỨU HỒ SƠ & LỊCH TRẢ NỢ\n5️⃣ CÁC CÂU HỎI KHÁC (FAQ)\n6️⃣ GẶP TƯ VẤN VIÊN"
+      },
+      {
+        "section": "Đăng ký vay mới",
+        "content": "Quy trình đăng ký hồ sơ vay trực tuyến tại Shinhan Bank rất nhanh chóng, chỉ mất khoảng 3-5 phút. Quý khách vui lòng thực hiện theo các bước sau:\n➡️ Bước 1: Truy cập trang đăng ký: https://vaytieudung.github.io/shinhanbank/ (chỉ tin tưởng shinhan.com.vn).\n➡️ Bước 2: Nhấn \"ĐĂNG KÝ VAY NGAY\".\n➡️ Bước 3: Điền thông tin: Họ tên, CCCD, SĐT, Thu nhập, Số tiền vay.\n➡️ Bước 4: Gửi hồ sơ, chờ xét duyệt 5 phút.\n➡️ Bước 5: Chụp màn hình thông báo \"HỒ SƠ ĐÃ ĐƯỢC PHÊ DUYỆT\" và gửi qua Zalo OA.\n‼️ CẢNH BÁO: KHÔNG chuyển khoản phí trước. Chỉ làm việc qua shinhan.com.vn, Zalo tick xanh, hotline 1900-8198."
+      },
+      {
+        "section": "Giải ngân khoản vay",
+        "content": "Cảm ơn Quý khách đã lựa chọn mục Giải ngân khoản vay. Để thủ tục được diễn ra nhanh chóng, Quý khách vui lòng xem kỹ các điều kiện cần thiết."
+      },
+      {
+        "section": "Điều kiện Giải ngân",
+        "content": [
+          "Điều kiện 1: Duy trì số dư tối thiểu 10% khoản vay. Ví dụ: Khoản vay 50.000.000 VNĐ → số dư tối thiểu 5.000.000 VNĐ. Lưu ý: Số dư chỉ cần hiển thị trong tài khoản chính chủ, không chuyển cho bất kỳ ai.",
+          "Điều kiện 2: Gửi ảnh chụp màn hình số dư tài khoản, thể hiện rõ tên chủ tài khoản và số dư hiện tại.",
+          "‼️ CẢNH BÁO LỪA ĐẢO: KHÔNG chuyển khoản phí trước. Chỉ làm việc qua shinhan.com.vn, Zalo tick xanh, hotline 1900-8198.",
+          "Điều kiện 3: Sau xác thực, hệ thống thẩm định trong 10–15 phút. Tiền sẽ chuyển vào tài khoản khi có thông báo \"Thẩm định thành công\"."
+        ]
+      },
+      {
+        "section": "Xử lý sự cố Giải ngân",
+        "content": "Quý khách vui lòng chọn vấn đề gặp phải trong quá trình giải ngân:\n- Không nhận được mã giải ngân\n- Thẻ bị khóa/chưa kích hoạt\n- Không đủ số dư\n- Vấn đề khác"
+      },
+      {
+        "section": "Hướng dẫn khi không đủ số dư",
+        "content": "Nếu tài khoản chưa đủ số dư, Quý khách có thể:\n1. Nạp thêm tiền vào tài khoản.\n2. Nhờ bạn bè, người thân chuyển khoản tạm thời (chỉ cần duy trì 10-15 phút để xác thực).\nLưu ý: Tuyệt đối không đưa tiền mặt hay chuyển khoản cho nhân viên tư vấn.\n‼️ CẢNH BÁO: KHÔNG chuyển khoản phí trước."
+      },
+      {
+        "section": "Kích hoạt thẻ Ngân hàng",
+        "content": "Trong quy trình này, \"Kích hoạt thẻ\" chính là việc hoàn tất điều kiện duy trì 10% số dư trong tài khoản. Nếu đã đủ số dư, vui lòng nhấn \"GIẢI NGÂN NGAY\" để gửi yêu cầu thẩm định."
+      },
+      {
+        "section": "Tính Thử Khoản Vay",
+        "content": "Cung cấp số tiền vay và thời hạn: {{input}}. Ví dụ: Vay 50 triệu, 12 tháng, lãi 11.5%/năm → trả 4,742,000 VNĐ/tháng."
+      },
+      {
+        "section": "Gặp Tư Vấn Viên",
+        "content": "Để được hỗ trợ trực tiếp, chọn:\n1. Gọi qua Zalo OA: Chuyên viên hỗ trợ 24/7.\n2. Chat qua Zalo OA: https://zalo.me/facofinance (phản hồi trong 2 phút).\nHotline: 1900-8198."
+      },
+      {
+        "section": "Hồ sơ cần chuẩn bị",
+        "content": "Chuẩn bị:\n1. Ảnh chụp 2 mặt CCCD còn hiệu lực.\n2. Sao kê lương 3 tháng gần nhất (thu nhập tối thiểu 4 triệu VNĐ/tháng).\n3. Hợp đồng lao động (tối thiểu 6 tháng).\n4. Số tài khoản ngân hàng chính chủ."
+      },
+      {
+        "section": "Bảng Giá Vay Chi Tiết",
+        "content": "Gói vay phổ biến:\n- Vay Tiêu Dùng: 100 triệu VNĐ, 11.5%/năm, 6-60 tháng, phí thẩm định 0%.\n- Vay Mua Xe: 500 triệu VNĐ, 9.5%/năm, 12-84 tháng, phí 1%.\n- Vay Mua Nhà: 3 tỷ VNĐ, 8.5%/năm, 120-240 tháng, phí 0.5%."
+      },
+      {
+        "section": "Theo dõi Trạng thái Hồ sơ",
+        "content": "Nhập mã hồ sơ (Ví dụ: SHB202510001): {{input}}. Trạng thái: [ĐANG XỬ LÝ], [CHỜ BỔ SUNG], [ĐÃ DUYỆT], [ĐÃ GIẢI NGÂN], [BỊ TỪ CHỐI]."
+      },
+      {
+        "section": "Lịch Trả Nợ Mẫu",
+        "content": "Lịch trả nợ tham khảo (50 triệu VNĐ, 12 tháng):\nKỳ 1: Gốc 4,167,000, Lãi 479,167, Tổng 4,646,167, Dư nợ 45,833,000.\nKỳ 12: Gốc 4,167,000, Lãi 40,035, Tổng 4,207,035, Dư nợ 0."
+      },
+      {
+        "section": "Xử lý Từ chối Hồ sơ",
+        "content": "Lý do từ chối phổ biến:\n1. Thu nhập không đủ: Bổ sung sao kê.\n2. CCCD hết hạn/mờ: Cập nhật CCCD mới.\n3. Thông tin sai lệch: Đảm bảo thông tin khớp.\n4. Lịch sử tín dụng thấp: Thanh toán nợ cũ.\nHơn 80% hồ sơ được duyệt lại sau bổ sung."
+      },
+      {
+        "section": "So sánh Shinhan với Ngân hàng khác",
+        "content": "Shinhan Bank:\n- Lãi suất từ: 11.5% (VPBank: 15%, TPBank: 13%, VCB: 12.5%).\n- Tốc độ giải ngân: 15 phút (VPBank: 2 ngày, TPBank: 1 ngày, VCB: 3 ngày).\n- Phí thẩm định: 0% (VPBank: 2%, TPBank: 1%, VCB: 0.5%)."
+      },
+      {
+        "section": "Cảnh báo Lừa đảo",
+        "content": "KHÔNG chuyển khoản phí trước. Dấu hiệu lừa đảo: Yêu cầu phí hồ sơ, link lạ không phải shinhan.com.vn, Zalo không tick xanh. Kênh chính thức: Website shinhan.com.vn, Zalo tick xanh, hotline 1900-8198."
+      },
+      {
+        "section": "Hỗ trợ Sau vay",
+        "content": "Dịch vụ sau vay:\n1. Gia hạn khoản vay: Thêm 6 tháng.\n2. Tất toán trước hạn: Phí ưu đãi.\n3. Cơ cấu lại khoản vay: Chuyển đổi linh hoạt.\n4. Nhắc lịch trả nợ: Qua SMS/Zalo."
+      },
+      {
+        "section": "Các câu hỏi thường gặp",
+        "content": [
+          "Câu hỏi: Có nợ xấu, nợ chú ý thì vay được không?\nTrả lời: Hỗ trợ linh hoạt, tối đa 50 triệu, 60 tháng, tùy thu nhập.",
+          "Câu hỏi: Có thẩm định hay gọi người thân không?\nTrả lời: Không thẩm định qua điện thoại, không gọi người thân, bảo mật 100%.",
+          "Câu hỏi: Có đóng phí trước/sau vay không?\nTrả lời: KHÔNG thu phí trước hoặc sau vay. Yêu cầu phí là lừa đảo.",
+          "Câu hỏi: Điều kiện vay cơ bản?\nTrả lời: 18-45 tuổi, CCCD, tài khoản ngân hàng, thu nhập từ 4 triệu VNĐ/tháng.",
+          "Câu hỏi: Thời gian giải ngân?\nTrả lời: 10-15 phút sau khi duyệt và xác minh.",
+          "Câu hỏi: Hồ sơ bị từ chối thì sao?\nTrả lời: Nhận SMS/Email lý do, bổ sung giấy tờ miễn phí."
+        ]
+      }
+    ]
+  },
+  "retrieval_settings": {
+    "method": "keyword_and_semantic",
+    "keywords": [
+      "xin chào", "hello", "bắt đầu",
+      "đăng ký vay", "vay mới", "2",
+      "giải ngân", "nhận tiền", "1",
+      "điều kiện giải ngân",
+      "sự cố", "không nhận tiền",
+      "không đủ số dư",
+      "kích hoạt thẻ",
+      "tính vay", "3",
+      "tra cứu", "mã hồ sơ", "4",
+      "tư vấn", "gặp tư vấn viên", "6",
+      "hồ sơ", "giấy tờ",
+      "gói vay", "bảng giá",
+      "lịch trả nợ",
+      "từ chối hồ sơ",
+      "so sánh ngân hàng",
+      "lừa đảo",
+      "hỗ trợ sau vay",
+      "faq", "câu hỏi", "5"
+    ],
+    "default_response": "Dạ, mình chưa hiểu rõ câu hỏi. Vui lòng chọn: 1️⃣ Giải ngân 2️⃣ Đăng ký vay 3️⃣ Tính thử 4️⃣ Tra cứu 5️⃣ FAQ 6️⃣ Tư vấn viên.",
+    "restrict_to_context": true
+  },
+  "scenarios": [
+    {
+      "id": "welcome",
+      "trigger_keywords": ["xin chào", "hello", "bắt đầu"],
+      "response": "Kính chào Quý khách! Bộ phận tư vấn tài chính và kiểm toán Shinhanbank, sẵn sàng hỗ trợ Quý khách về các dịch vụ tài chính của Shinhan Bank. Vui lòng chọn mục cần hỗ trợ bên dưới để bắt đầu:\n1️⃣ GIẢI NGÂN KHOẢN VAY\n2️⃣ ĐĂNG KÝ VAY MỚI\n3️⃣ TÍNH THỬ KHOẢN VAY\n4️⃣ TRA CỨU HỒ SƠ & LỊCH TRẢ NỢ\n5️⃣ CÁC CÂU HỎI KHÁC (FAQ)\n6️⃣ GẶP TƯ VẤN VIÊN",
+      "buttons": [
+        {"text": "Giải ngân", "action": "trigger_scenario", "value": "disbursement"},
+        {"text": "Đăng ký vay", "action": "trigger_scenario", "value": "loan_application"},
+        {"text": "Tính thử", "action": "trigger_scenario", "value": "loan_calculator"},
+        {"text": "Tra cứu", "action": "trigger_scenario", "value": "application_status"},
+        {"text": "FAQ", "action": "trigger_scenario", "value": "faq"},
+        {"text": "Tư vấn viên", "action": "trigger_scenario", "value": "connect_advisor"}
+      ]
+    },
+    {
+      "id": "loan_application",
+      "trigger_keywords": ["đăng ký vay", "vay mới", "2"],
+      "response": "Quy trình đăng ký hồ sơ vay trực tuyến tại Shinhan Bank rất nhanh chóng, chỉ mất khoảng 3-5 phút. Quý khách vui lòng thực hiện theo các bước sau:\n➡️ Bước 1: Truy cập trang đăng ký: https://vaytieudung.github.io/shinhanbank/ (chỉ tin tưởng shinhan.com.vn).\n➡️ Bước 2: Nhấn \"ĐĂNG KÝ VAY NGAY\".\n➡️ Bước 3: Điền thông tin: Họ tên, CCCD, SĐT, Thu nhập, Số tiền vay.\n➡️ Bước 4: Gửi hồ sơ, chờ xét duyệt 5 phút.\n➡️ Bước 5: Chụp màn hình thông báo \"HỒ SƠ ĐÃ ĐƯỢC PHÊ DUYỆT\" và gửi qua Zalo OA.\n‼️ CẢNH BÁO: KHÔNG chuyển khoản phí trước. Chỉ làm việc qua shinhan.com.vn, Zalo tick xanh, hotline 1900-8198.",
+      "buttons": [
+        {"text": "Bắt đầu đăng ký ngay", "action": "open_url", "value": "https://vaytieudung.github.io/shinhanbank/"},
+        {"text": "Xem hồ sơ cần chuẩn bị", "action": "trigger_scenario", "value": "required_documents"}
+      ]
+    },
+    {
+      "id": "disbursement",
+      "trigger_keywords": ["giải ngân", "nhận tiền", "1"],
+      "response": "Cảm ơn Quý khách đã lựa chọn mục Giải ngân khoản vay. Để thủ tục được diễn ra nhanh chóng, Quý khách vui lòng xem kỹ các điều kiện cần thiết.",
+      "buttons": [
+        {"text": "Điều Kiện Giải Ngân", "action": "trigger_scenario", "value": "disbursement_conditions"},
+        {"text": "Xử lý sự cố giải ngân", "action": "trigger_scenario", "value": "disbursement_issues"},
+        {"text": "Gặp tư vấn viên", "action": "trigger_scenario", "value": "connect_advisor"}
+      ]
+    },
+    {
+      "id": "disbursement_conditions",
+      "trigger_keywords": ["điều kiện giải ngân"],
+      "response": [
+        "Điều kiện 1: Duy trì số dư tối thiểu 10% khoản vay. Ví dụ: Khoản vay 50.000.000 VNĐ → số dư tối thiểu 5.000.000 VNĐ. Lưu ý: Số dư chỉ cần hiển thị trong tài khoản chính chủ, không chuyển cho bất kỳ ai.",
+        "Điều kiện 2: Gửi ảnh chụp màn hình số dư tài khoản, thể hiện rõ tên chủ tài khoản và số dư hiện tại.",
+        "‼️ CẢNH BÁO LỪA ĐẢO: KHÔNG chuyển khoản phí trước. Chỉ làm việc qua shinhan.com.vn, Zalo tick xanh, hotline 1900-8198.",
+        "Điều kiện 3: Sau xác thực, hệ thống thẩm định trong 10–15 phút. Tiền sẽ chuyển vào tài khoản khi có thông báo \"Thẩm định thành công\"."
+      ],
+      "buttons": [
+        {"text": "Tôi đã đủ điều kiện", "action": "request_input", "value": "Vui lòng gửi ảnh chụp màn hình số dư tài khoản: {{input}}"},
+        {"text": "Hướng dẫn khi không đủ số dư", "action": "trigger_scenario", "value": "insufficient_balance"}
+      ]
+    },
+    {
+      "id": "disbursement_issues",
+      "trigger_keywords": ["sự cố", "không nhận tiền"],
+      "response": "Quý khách vui lòng chọn vấn đề gặp phải trong quá trình giải ngân:",
+      "buttons": [
+        {"text": "Không nhận được mã giải ngân", "action": "trigger_scenario", "value": "no_disbursement_code"},
+        {"text": "Thẻ bị khóa/chưa kích hoạt", "action": "trigger_scenario", "value": "card_activation"},
+        {"text": "Không đủ số dư", "action": "trigger_scenario", "value": "insufficient_balance"},
+        {"text": "Vấn đề khác", "action": "trigger_scenario", "value": "connect_advisor"}
+      ]
+    },
+    {
+      "id": "insufficient_balance",
+      "trigger_keywords": ["không đủ số dư"],
+      "response": "Nếu tài khoản chưa đủ số dư, Quý khách có thể:\n1. Nạp thêm tiền vào tài khoản.\n2. Nhờ bạn bè, người thân chuyển khoản tạm thời (chỉ cần duy trì 10-15 phút để xác thực).\nLưu ý: Tuyệt đối không đưa tiền mặt hay chuyển khoản cho nhân viên tư vấn.\n‼️ CẢNH BÁO: KHÔNG chuyển khoản phí trước.",
+      "buttons": [
+        {"text": "Tôi đã nạp đủ", "action": "request_input", "value": "Vui lòng gửi ảnh chụp màn hình số dư tài khoản: {{input}}"},
+        {"text": "Cần hỗ trợ thêm", "action": "trigger_scenario", "value": "connect_advisor"}
+      ]
+    },
+    {
+      "id": "card_activation",
+      "trigger_keywords": ["kích hoạt thẻ"],
+      "response": "Trong quy trình này, \"Kích hoạt thẻ\" chính là việc hoàn tất điều kiện duy trì 10% số dư trong tài khoản. Nếu đã đủ số dư, vui lòng nhấn \"GIẢI NGÂN NGAY\" để gửi yêu cầu thẩm định.",
+      "buttons": [
+        {"text": "GIẢI NGÂN NGAY", "action": "request_input", "value": "Vui lòng gửi ảnh chụp màn hình số dư tài khoản: {{input}}"},
+        {"text": "Tôi chưa đủ số dư", "action": "trigger_scenario", "value": "insufficient_balance"}
+      ]
+    },
+    {
+      "id": "loan_calculator",
+      "trigger_keywords": ["tính vay", "3"],
+      "response": "Vui lòng cung cấp số tiền vay và thời hạn (Ví dụ: 50000000, 12 tháng): {{input}}",
+      "input_processing": {
+        "pattern": "(\\d+)\\s*,\\s*(\\d+)\\s*tháng",
+        "response": "Dựa trên {{input}}, khoản vay {{amount}} VNĐ trong {{months}} tháng, trả góp mỗi tháng khoảng {{payment}} VNĐ (lãi suất 11.5%/năm).",
+        "calculation": {
+          "function": "calculate_loan",
+          "parameters": {
+            "amount": "{{matches[1]}}",
+            "months": "{{matches[2]}}",
+            "annual_rate": 0.115
+          },
+          "output": "{{payment}}"
+        },
+        "error_response": "Vui lòng nhập đúng định dạng (Ví dụ: 50000000, 12 tháng)."
+      },
+      "buttons": [
+        {"text": "Tính khoản vay của tôi", "action": "request_input", "value": "Vui lòng cung cấp số tiền vay và thời hạn: {{input}}"},
+        {"text": "Xem bảng lãi suất chi tiết", "action": "trigger_scenario", "value": "loan_packages"}
+      ]
+    },
+    {
+      "id": "application_status",
+      "trigger_keywords": ["tra cứu", "mã hồ sơ", "4"],
+      "response": "Vui lòng nhập mã hồ sơ (Ví dụ: SHB202510001): {{input}}",
+      "input_processing": {
+        "pattern": "SHB\\d{9}",
+        "response": "Hồ sơ {{input}} đang ở trạng thái [ĐANG XỬ LÝ]. Vui lòng chờ 10-15 phút hoặc liên hệ hotline 1900-8198.",
+        "error_response": "Mã hồ sơ không đúng định dạng. Vui lòng nhập lại (Ví dụ: SHB202510001)."
+      },
+      "buttons": [
+        {"text": "Nhập mã hồ sơ để tra cứu", "action": "request_input", "value": "Vui lòng nhập mã hồ sơ: {{input}}"}
+      ]
+    },
+    {
+      "id": "connect_advisor",
+      "trigger_keywords": ["tư vấn", "gặp tư vấn viên", "6"],
+      "response": "Để được hỗ trợ trực tiếp, chọn:\n1. Gọi qua Zalo OA: Chuyên viên hỗ trợ 24/7.\n2. Chat qua Zalo OA: https://zalo.me/facofinance (phản hồi trong 2 phút).\nHotline: 1900-8198.",
+      "buttons": [
+        {"text": "Gọi Zalo OA", "action": "open_url", "value": "https://zalo.me/facofinance"},
+        {"text": "Chat Zalo", "action": "open_url", "value": "https://zalo.me/facofinance"},
+        {"text": "Để lại yêu cầu", "action": "trigger_scenario", "value": "connect_advisor"}
+      ]
+    },
+    {
+      "id": "required_documents",
+      "trigger_keywords": ["hồ sơ", "giấy tờ"],
+      "response": "Chuẩn bị:\n1. Ảnh chụp 2 mặt CCCD còn hiệu lực.\n2. Sao kê lương 3 tháng gần nhất (thu nhập tối thiểu 4 triệu VNĐ/tháng).\n3. Hợp đồng lao động (tối thiểu 6 tháng).\n4. Số tài khoản ngân hàng chính chủ.",
+      "buttons": [
+        {"text": "Đăng ký ngay", "action": "open_url", "value": "https://vaytieudung.github.io/shinhanbank/"},
+        {"text": "Tính khoản vay", "action": "trigger_scenario", "value": "loan_calculator"}
+      ]
+    },
+    {
+      "id": "loan_packages",
+      "trigger_keywords": ["gói vay", "bảng giá"],
+      "response": "Gói vay phổ biến:\n- Vay Tiêu Dùng: 100 triệu VNĐ, 11.5%/năm, 6-60 tháng, phí thẩm định 0%.\n- Vay Mua Xe: 500 triệu VNĐ, 9.5%/năm, 12-84 tháng, phí 1%.\n- Vay Mua Nhà: 3 tỷ VNĐ, 8.5%/năm, 120-240 tháng, phí 0.5%.",
+      "buttons": [
+        {"text": "Chọn gói Vay Tiêu Dùng", "action": "trigger_scenario", "value": "loan_application"},
+        {"text": "Tư vấn gói vay khác", "action": "trigger_scenario", "value": "connect_advisor"}
+      ]
+    },
+    {
+      "id": "repayment_schedule",
+      "trigger_keywords": ["lịch trả nợ"],
+      "response": "Lịch trả nợ tham khảo (50 triệu VNĐ, 12 tháng):\nKỳ 1: Gốc 4,167,000, Lãi 479,167, Tổng 4,646,167, Dư nợ 45,833,000.\nKỳ 12: Gốc 4,167,000, Lãi 40,035, Tổng 4,207,035, Dư nợ 0.",
+      "buttons": [
+        {"text": "Tạo lịch trả nợ cho khoản vay của tôi", "action": "trigger_scenario", "value": "loan_calculator"},
+        {"text": "Tải file PDF mẫu", "action": "open_url", "value": "https://shinhan.com.vn/repayment_schedule"}
+      ]
+    },
+    {
+      "id": "rejection_handling",
+      "trigger_keywords": ["từ chối hồ sơ"],
+      "response": "Lý do từ chối phổ biến:\n1. Thu nhập không đủ: Bổ sung sao kê.\n2. CCCD hết hạn/mờ: Cập nhật CCCD mới.\n3. Thông tin sai lệch: Đảm bảo thông tin khớp.\n4. Lịch sử tín dụng thấp: Thanh toán nợ cũ.\nHơn 80% hồ sơ được duyệt lại sau bổ sung.",
+      "buttons": [
+        {"text": "Bổ sung hồ sơ ngay", "action": "open_url", "value": "https://vaytieudung.github.io/shinhanbank/"},
+        {"text": "Lý do hồ sơ của tôi bị từ chối?", "action": "trigger_scenario", "value": "connect_advisor"}
+      ]
+    },
+    {
+      "id": "bank_comparison",
+      "trigger_keywords": ["so sánh ngân hàng"],
+      "response": "Shinhan Bank:\n- Lãi suất từ: 11.5% (VPBank: 15%, TPBank: 13%, VCB: 12.5%).\n- Tốc độ giải ngân: 15 phút (VPBank: 2 ngày, TPBank: 1 ngày, VCB: 3 ngày).\n- Phí thẩm định: 0% (VPBank: 2%, TPBank: 1%, VCB: 0.5%).",
+      "buttons": [
+        {"text": "Chọn vay ưu đãi tại Shinhan", "action": "trigger_scenario", "value": "loan_application"}
+      ]
+    },
+    {
+      "id": "fraud_alert",
+      "trigger_keywords": ["lừa đảo"],
+      "response": "KHÔNG chuyển khoản phí trước. Dấu hiệu lừa đảo: Yêu cầu phí hồ sơ, link lạ không phải shinhan.com.vn, Zalo không tick xanh. Kênh chính thức: Website shinhan.com.vn, Zalo tick xanh, hotline 1900-8198.",
+      "buttons": [
+        {"text": "Quan tâm Zalo OA", "action": "open_url", "value": "https://zalo.me/facofinance"},
+        {"text": "Truy cập Website", "action": "open_url", "value": "https://shinhan.com.vn"}
+      ]
+    },
+    {
+      "id": "post_loan_support",
+      "trigger_keywords": ["hỗ trợ sau vay"],
+      "response": "Dịch vụ sau vay:\n1. Gia hạn khoản vay: Thêm 6 tháng.\n2. Tất toán trước hạn: Phí ưu đãi.\n3. Cơ cấu lại khoản vay: Chuyển đổi linh hoạt.\n4. Nhắc lịch trả nợ: Qua SMS/Zalo.",
+      "buttons": [
+        {"text": "Yêu cầu gia hạn", "action": "trigger_scenario", "value": "connect_advisor"},
+        {"text": "Thủ tục trả nợ trước hạn", "action": "trigger_scenario", "value": "connect_advisor"}
+      ]
+    },
+    {
+      "id": "faq",
+      "trigger_keywords": ["faq", "câu hỏi", "5"],
+      "response": "Chọn câu hỏi:\n1. Có nợ xấu, nợ chú ý thì vay được không?\n2. Có thẩm định hay gọi người thân không?\n3. Có đóng phí trước/sau vay không?\n4. Điều kiện vay cơ bản?\n5. Thời gian giải ngân?\n6. Hồ sơ bị từ chối thì sao?",
+      "buttons": [
+        {"text": "Nợ xấu", "action": "trigger_response", "value": "Hỗ trợ linh hoạt, tối đa 50 triệu, 60 tháng, tùy thu nhập."},
+        {"text": "Thẩm định", "action": "trigger_response", "value": "Không thẩm định qua điện thoại, không gọi người thân, bảo mật 100%."},
+        {"text": "Phí", "action": "trigger_response", "value": "KHÔNG thu phí trước hoặc sau vay. Yêu cầu phí là lừa đảo."},
+        {"text": "Điều kiện vay", "action": "trigger_response", "value": "18-45 tuổi, CCCD, tài khoản ngân hàng, thu nhập từ 4 triệu VNĐ/tháng."},
+        {"text": "Thời gian giải ngân", "action": "trigger_response", "value": "10-15 phút sau khi duyệt và xác minh."},
+        {"text": "Hồ sơ bị từ chối", "action": "trigger_response", "value": "Nhận SMS/Email lý do, bổ sung giấy tờ miễn phí."}
+      ]
+    }
+  ]
+}
