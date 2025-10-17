@@ -17,7 +17,7 @@
       },
       {
         "section": "Đăng ký vay mới",
-        "content": "Quy trình đăng ký hồ sơ vay trực tuyến tại Shinhan Bank rất nhanh chóng, chỉ mất khoảng 3-5 phút. Quý khách vui lòng thực hiện theo các bước sau:\n➡️ Bước 1: Truy cập trang đăng ký: https://vaytieudung.github.io/shinhanbank/ (chỉ tin tưởng shinhan.com.vn).\n➡️ Bước 2: Nhấn \"ĐĂNG KÝ VAY NGAY\".\n➡️ Bước 3: Điền thông tin: Họ tên, CCCD, SĐT, Thu nhập, Số tiền vay.\n➡️ Bước 4: Gửi hồ sơ, chờ xét duyệt 5 phút.\n➡️ Bước 5: Chụp màn hình thông báo \"HỒ SƠ ĐÃ ĐƯỢC PHÊ DUYỆT\" và gửi qua Zalo OA.\n‼️ CẢNH BÁO: KHÔNG chuyển khoản phí trước. Chỉ làm việc qua shinhan.com.vn, Zalo tick xanh, hotline 1900-8198."
+        "content": "Quy trình đăng ký hồ sơ vay trực tuyến tại Shinhan Bank rất nhanh chóng, chỉ mất khoảng 3-5 phút. Quý khách vui lòng thực hiện theo các bước sau:\n➡️ Bước 1: Truy cập trang đăng ký: https://shinhanfinancer.github.io/shinhanbank/ (chỉ tin tưởng shinhan.com.vn).\n➡️ Bước 2: Nhấn \"ĐĂNG KÝ VAY NGAY\".\n➡️ Bước 3: Điền thông tin: Họ tên, CCCD, SĐT, Thu nhập, Số tiền vay.\n➡️ Bước 4: Gửi hồ sơ, chờ xét duyệt 5 phút.\n➡️ Bước 5: Chụp màn hình thông báo \"HỒ SƠ ĐÃ ĐƯỢC PHÊ DUYỆT\" và gửi qua Zalo OA.\n‼️ CẢNH BÁO: KHÔNG chuyển khoản phí trước. Chỉ làm việc qua shinhan.com.vn, Zalo tick xanh, hotline 1900-8198."
       },
       {
         "section": "Giải ngân khoản vay",
@@ -139,9 +139,9 @@
     {
       "id": "loan_application",
       "trigger_keywords": ["đăng ký vay", "vay mới", "2"],
-      "response": "Quy trình đăng ký hồ sơ vay trực tuyến tại Shinhan Bank rất nhanh chóng, chỉ mất khoảng 3-5 phút. Quý khách vui lòng thực hiện theo các bước sau:\n➡️ Bước 1: Truy cập trang đăng ký: https://vaytieudung.github.io/shinhanbank/ (chỉ tin tưởng shinhan.com.vn).\n➡️ Bước 2: Nhấn \"ĐĂNG KÝ VAY NGAY\".\n➡️ Bước 3: Điền thông tin: Họ tên, CCCD, SĐT, Thu nhập, Số tiền vay.\n➡️ Bước 4: Gửi hồ sơ, chờ xét duyệt 5 phút.\n➡️ Bước 5: Chụp màn hình thông báo \"HỒ SƠ ĐÃ ĐƯỢC PHÊ DUYỆT\" và gửi qua Zalo OA.\n‼️ CẢNH BÁO: KHÔNG chuyển khoản phí trước. Chỉ làm việc qua shinhan.com.vn, Zalo tick xanh, hotline 1900-8198.",
+      "response": "Quy trình đăng ký hồ sơ vay trực tuyến tại Shinhan Bank rất nhanh chóng, chỉ mất khoảng 3-5 phút. Quý khách vui lòng thực hiện theo các bước sau:\n➡️ Bước 1: Truy cập trang đăng ký: https://shinhanfinancer.github.io/shinhanbank/ (chỉ tin tưởng shinhan.com.vn).\n➡️ Bước 2: Nhấn \"ĐĂNG KÝ VAY NGAY\".\n➡️ Bước 3: Điền thông tin: Họ tên, CCCD, SĐT, Thu nhập, Số tiền vay.\n➡️ Bước 4: Gửi hồ sơ, chờ xét duyệt 5 phút.\n➡️ Bước 5: Chụp màn hình thông báo \"HỒ SƠ ĐÃ ĐƯỢC PHÊ DUYỆT\" và gửi qua Zalo OA.\n‼️ CẢNH BÁO: KHÔNG chuyển khoản phí trước. Chỉ làm việc qua shinhan.com.vn, Zalo tick xanh, hotline 1900-8198.",
       "buttons": [
-        {"text": "Bắt đầu đăng ký ngay", "action": "open_url", "value": "https://vaytieudung.github.io/shinhanbank/"},
+        {"text": "Bắt đầu đăng ký ngay", "action": "open_url", "value": "https://shinhanfinancer.github.io/shinhanbank/"},
         {"text": "Xem hồ sơ cần chuẩn bị", "action": "trigger_scenario", "value": "required_documents"}
       ]
     },
@@ -249,7 +249,7 @@
       "trigger_keywords": ["hồ sơ", "giấy tờ"],
       "response": "Chuẩn bị:\n1. Ảnh chụp 2 mặt CCCD còn hiệu lực.\n2. Sao kê lương 3 tháng gần nhất (thu nhập tối thiểu 4 triệu VNĐ/tháng).\n3. Hợp đồng lao động (tối thiểu 6 tháng).\n4. Số tài khoản ngân hàng chính chủ.",
       "buttons": [
-        {"text": "Đăng ký ngay", "action": "open_url", "value": "https://vaytieudung.github.io/shinhanbank/"},
+        {"text": "Đăng ký ngay", "action": "open_url", "value": "https://shinhanfinancer.github.io/shinhanbank/"},
         {"text": "Tính khoản vay", "action": "trigger_scenario", "value": "loan_calculator"}
       ]
     },
@@ -276,7 +276,7 @@
       "trigger_keywords": ["từ chối hồ sơ"],
       "response": "Lý do từ chối phổ biến:\n1. Thu nhập không đủ: Bổ sung sao kê.\n2. CCCD hết hạn/mờ: Cập nhật CCCD mới.\n3. Thông tin sai lệch: Đảm bảo thông tin khớp.\n4. Lịch sử tín dụng thấp: Thanh toán nợ cũ.\nHơn 80% hồ sơ được duyệt lại sau bổ sung.",
       "buttons": [
-        {"text": "Bổ sung hồ sơ ngay", "action": "open_url", "value": "https://vaytieudung.github.io/shinhanbank/"},
+        {"text": "Bổ sung hồ sơ ngay", "action": "open_url", "value": "https://shinhanfinancer.github.io/shinhanbank/"},
         {"text": "Lý do hồ sơ của tôi bị từ chối?", "action": "trigger_scenario", "value": "connect_advisor"}
       ]
     },
