@@ -1,0 +1,1 @@
+console.log("Shinhan web build initialized");
